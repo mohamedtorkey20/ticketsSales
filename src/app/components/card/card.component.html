@@ -1,0 +1,96 @@
+<div
+  class="relative w-full h-full rounded-lg shadow-lg bg-[#8A74F9] p-4 md:pl-[30px] md:pe-[30px]"
+>
+  <div class="relative text-white pt-[14px]">
+    <div class="flex justify-between items-center">
+      <p-button
+        [pTooltip]="tooltipContent"
+        severity="secondary"
+        tooltipPosition="bottom"
+        label="Button"
+      >
+        <img
+          src="assets/icons/trash.svg"
+          alt="qr-code"
+          class="w-[22px] h-[22px] md:w-[18px] md:h-[18px] lg:w-[22px] lg:h-[22px]"
+        />
+      </p-button>
+
+      <ng-template #tooltipContent>
+        <div class="flex align-items-center">
+          <span> حذف</span>
+        </div>
+      </ng-template>
+      <p
+        class="font-neoSans text-[14px] md:text-[12px] lg:text-[14px] font-medium leading-[16.8px] text-center"
+      >
+        عرض التذكرة الخاصة بالفيلم
+      </p>
+    </div>
+
+    <div
+      class="relative flex justify-between md:justify-around lg:justify-between items-center mt-4 bg-white text-black rounded-lg p-2 mx-auto w-[226.2px] md:w-full lg:w-[226.2px] h-[42px]"
+    >
+      <button (click)="copyCode()">
+        <img
+          src="assets/icons/copy.svg"
+          alt="copy"
+          class="w-[11.9px] h-[14.14px]"
+        />
+      </button>
+      <p
+        class="font-inter text-[13px] md:text-[10px] lg:text-[13px] font-medium leading-[23.28px] text-left"
+      >
+        {{ code }}
+      </p>
+
+      @if (copySuccess) {
+      <div
+        class="alert absolute top-[-30px] left-[50%] transform translate-x-[-50%] bg-green-500 text-white rounded-lg px-4 py-2 text-sm opacity-0 fade-in-out"
+      >
+        Copied!
+      </div>
+      }
+    </div>
+
+    <p
+      class="font-neoSans text-[12px] font-normal leading-[14.35px] text-center mt-4"
+    >
+      فعال حتى 15 يوليو 2023
+    </p>
+  </div>
+
+  <hr class="mt-4 border-dashed" />
+
+  <div class="flex justify-between items-end mt-4 md:gap-4">
+    <div class="bg-white lg:w-[82px] lg:h-[82px] rounded-lg">
+      <qrcode
+        [qrdata]="'Your data string'"
+        [width]="82"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+
+    <div class="flex items-end gap-2 ">
+      <button
+        class="flex justify-center items-center w-[70px] h-[24px] md:w-[50px] lg:w-[70px] ]rounded-lg border border-white hover:bg-[#7d67eb] "
+      >
+        <p class="font-neoSans text-[12px] font-normal text-white">مشاركه</p>
+        <img src="assets/icons/send.svg" alt="send" class="w-[16px] h-[16px]" />
+      </button>
+
+      <div class="space-y-1 text-white">
+        <p
+          class="font-neoSans text-[14px] font-normal leading-[16.74px] text-left"
+        >
+          خصم
+        </p>
+        <p
+          class="font-montserrat text-[18px] font-medium leading-[21.94px] text-left"
+        >
+          25%
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

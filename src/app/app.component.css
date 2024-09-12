@@ -1,0 +1,20 @@
+
+@media (min-width: 300px) and (max-width: 450px) {
+  .parnetSearchBar{
+    flex-direction: column-reverse;
+
+  }
+
+  .booking{
+    padding-right: 5.6rem;
+    justify-content:space-between;
+
+  }
+  .searchBar{
+  gap: 1rem;
+  padding-right: 2.2rem;
+
+  }
+}
+
+

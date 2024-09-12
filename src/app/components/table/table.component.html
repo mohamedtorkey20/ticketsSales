@@ -1,0 +1,251 @@
+<div class="w-full h-full" dir="rtl">
+  <p-table
+    [value]="ticketsData"
+    [tableStyle]="{ background: '#ffffff', padding: '10px' }"
+  >
+    <ng-template pTemplate="header">
+      <tr class="text-center">
+        <th>#</th>
+        <th>المستخدم</th>
+        <th>رقم التذكرة</th>
+        <th pSortableColumn="ticketValue" style="width: 20%">
+          قيمى التذكرة
+          <img
+            src="assets/icons/arrowTable.svg"
+            alt="arrow-down"
+            class="w-4 h-4 inline-block"
+          />
+        </th>
+
+        <th>السينمات</th>
+        <th>عدد الأشخاص</th>
+        <th>عدد مرات الشراء</th>
+        <th>التذكرة</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ticket>
+      <tr class="text-center hover:bg-slate-100">
+        <td>{{ ticket.id }}</td>
+        <td class="">
+          <div class="flex items-center gap-1">
+            <div class="h-full hidden md:w-[29.88px] md:h-[29.88px] md:block">
+              <img
+                alt="UserOne"
+                [src]="'assets/icons/' + ticket.image + '.svg'"
+                width="29.88"
+                height="29.88"
+                style="vertical-align: middle"
+              />
+            </div>
+            <div>
+              <p
+                class="font-neoSans text-[11.60px] font-normal leading-[19.92px] text-right whitespace-nowrap text-[#1C1C28]"
+              >
+                {{ ticket.user }}
+              </p>
+              <p
+                class="text-[#92A1AD] font-poppins text-[9.96px] font-normal leading-[19.92px] text-left"
+              >
+                {{ ticket.userPhone }}
+              </p>
+            </div>
+          </div>
+        </td>
+        <td
+          class="font-inter text-[13.28px] font-normal leading-[23.24px] text-left"
+        >
+          {{ ticket.ticketNumber }}
+        </td>
+        <td
+          class="font-inter text-[13.28px] font-normal leading-[23.24px] text-left"
+        >
+          {{ ticket.ticketValue }}
+        </td>
+        <p-button
+          [pTooltip]="tooltipContent"
+          severity="secondary"
+          tooltipPosition="bottom"
+          label="Button"
+        >
+          <td
+            class="font-neoSans text-[13.28px] font-normal leading-[19.92px] text-left whitespace-nowrap"
+          >
+            {{ ticket.cinemas }}
+          </td>
+        </p-button>
+
+        <ng-template #tooltipContent>
+          <div class="flex align-items-center">
+            <span> {{ ticket.cinemas }}</span>
+          </div>
+        </ng-template>
+        <td
+          class="font-inter text-[13.28px] font-normal leading-[23.24px] text-left"
+        >
+          {{ ticket.numberOfPeople }}
+        </td>
+        <td
+          class="font-neoSans text-[13.28px] font-normal leading-[23.24px ] text-left"
+        >
+          {{ ticket.numberOfPurchases }}
+        </td>
+        <td>
+          <div class="flex items-center" dir="ltr">
+            <div class="w-6">
+              <button>
+                <img
+                  src="assets/icons/download.svg"
+                  alt="ticket"
+                  class="w-[16px] h-[16px]"
+                />
+              </button>
+            </div>
+
+            <div class="flex gap-1 items-center">
+              <div>
+                <p
+                  class="font-neoSans text-[11.67px] font-normal leading-[17.5px] text-right"
+                >
+                  <span
+                    class="font-inter text-[11.67px] font-medium leading-[17.5px] text-right"
+                    >pdf.</span
+                  >تذكرة رقم 45
+                </p>
+                <p
+                  class="font-inter text-[10px] text-[#00000066] font-normal leading-[15px] text-right"
+                >
+                  9mb<span class="pl-1 pe-1"> .</span>
+                  <span class="font-medium">PDF</span>
+                </p>
+              </div>
+              <div
+                class="w-[31.67px] h-[31.67px] bg-[#8A74F91A] flex justify-center items-center"
+              >
+                <img
+                  src="assets/icons/ticket.svg"
+                  alt="arrow-down"
+                  class="w-[16px] h-[16px] inline-block"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div
+    class="w-full flex justify-between pagnator items-center pb-3 mb-3 bg-[#ffffff]"
+    dir="ltr"
+  >
+    <div>
+      <nav aria-label="Page navigation example">
+        <ul class="flex items-center -space-x-px h-10 text-base">
+          <li>
+            <a
+              href="#"
+              class="flex items-center justify-center w-[27px] h-[27px]"
+            >
+              <img
+                src="assets/icons/prev.svg"
+                alt=""
+                class="w-[18px] h-[18px]"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="z-10 flex items-center justify-center font-inter text-[13.5px] font-semibold leading-[13.5px] tracking-[-0.01em] text-center text-[#7E8299] mx-2 md:mx-4 h-[27px] w-[27px] rounded-[4.5px] hover:text-[#ffffff] hover:bg-[#8A74F9]"
+              >1</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="z-10 flex items-center justify-center font-inter text-[13.5px] font-semibold leading-[13.5px] tracking-[-0.01em] text-center text-[#7E8299] mx-2 md:mx-4 h-[27px] w-[27px] rounded-[4.5px] hover:text-[#ffffff] hover:bg-[#8A74F9]"
+              >2</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="z-10 flex items-center justify-center font-inter text-[13.5px] font-semibold leading-[13.5px] tracking-[-0.01em] text-center text-[#7E8299] mx-2 md:mx-4 h-[27px] w-[27px] rounded-[4.5px] hover:text-[#ffffff] hover:bg-[#8A74F9]"
+              >3</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="z-10 flex items-center justify-center font-inter text-[13.5px] font-semibold leading-[13.5px] tracking-[-0.01em] text-center text-[#7E8299] mx-2 md:mx-4 h-[27px] w-[27px] rounded-[4.5px] hover:text-[#ffffff] hover:bg-[#8A74F9]"
+              >4</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="z-10 flex items-center justify-center font-inter text-[13.5px] font-semibold leading-[13.5px] tracking-[-0.01em] text-center text-[#ffffff] mx-2 md:mx-4 h-[27px] w-[27px] rounded-[4.5px] bg-[#8A74F9]"
+              >5</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center justify-center w-[27px] h-[27px]"
+            >
+              <img src="assets/icons/next.svg" alt="" class="w-full h-full" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="pagnatorNumberOFRows">
+      <div class="flex items-center w-full md:w-auto me-4">
+        <div>
+          <p
+            class="font-neoSans text-[10.5px] font-normal leading-[12.56px] text-[#333333] mb-2 sm:mb-0"
+          >
+            <span class="font-semibold leading-[14.3px]">250</span> من اصل
+          </p>
+        </div>
+        <div>
+          <form class="relative mx-2">
+            <select
+              id="countries"
+              class="w-[52.5px] p-1 rounded-[6px] font-neoSans text-[12.11px] font-normal leading-[16.96px] text-left border bg-[#ffffff] appearance-none"
+            >
+              <option selected>20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+              <option value="200">200</option>
+              <option value="250">250</option>
+            </select>
+            <div class="absolute inset-y-0 right-2 flex pointer-events-none">
+              <img src="assets/icons/arrowSelect.svg" alt="" />
+            </div>
+          </form>
+        </div>
+        <div>
+          <p
+            class="font-neoSans text-[10.5px] font-normal leading-[12.56px] ml-3 text-left"
+          >
+            عرض
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
+<div class=" ">
+
+    </div> -->

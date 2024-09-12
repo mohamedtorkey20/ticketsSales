@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  background-color: #F3F5F7;
+  display: absolute;
+  width: 100%;
+  height: 820px;
+  }
+
+
+
+  /* Default Styles (Mobile First) */
+body {
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Extra Small Devices (Portrait Phones, <576px) */
+@media (max-width: 575.98px) {
+  body {
+      font-size: 14px;
+      padding: 5px;
+  }
+}
+
+/* Small Devices (Landscape Phones, >=576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  body {
+      font-size: 15px;
+      padding: 8px;
+  }
+}
+
+/* Medium Devices (Tablets, >=768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+      font-size: 16px;
+      padding: 10px;
+  }
+}
+
+/* Large Devices (Desktops, >=992px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+      font-size: 17px;
+      padding: 15px;
+  }
+}
+
+/* Extra Large Devices (Laptops and Desktops, >=1200px) */
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+  body {
+      font-size: 18px;
+      padding: 20px;
+  }
+}
+
+/* Ultra-Wide Devices (Desktops >=1600px) */
+@media (min-width: 1600px) {
+  body {
+      font-size: 20px;
+      padding: 25px;
+  }
+}

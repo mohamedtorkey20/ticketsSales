@@ -1,0 +1,148 @@
+<div class="container pt-[75px] bg-[#F3F5F7]">
+  <!-- First Part -->
+  <div class="flex flex-col pl-[15px] pr-[15px] lg:pl-[33px] lg:pr-[137px]">
+    <!-- Buttons and Ticket Number -->
+    <div class="flex justify-between items-center w-full h-[34px] mb-[13px]">
+      <button
+        class="flex justify-around items-center h-full w-[78px] bg-[#E9EAEA] hover:bg-[#c5cfcf] "
+      >
+        <div
+          class="font-neoSans text-[12px] sm:text-[14px] font-normal leading-[28px] text-left"
+        >
+          تعديل
+        </div>
+        <div>
+          <img
+            src="assets/icons/edit.svg"
+            alt="edit"
+            class="w-[18px] h-[18px]"
+          />
+        </div>
+      </button>
+
+      <div class="flex gap-2 sm:gap-3 items-center">
+        <div
+          class="font-neoSans text-[14px] sm:text-[16px] font-medium leading-[28px] text-left"
+        >
+          تذكره رقم 2324#
+        </div>
+        <button class="bg-slate-300 rounded-md p-1 hover:bg-slate-400 ">
+          <img
+            src="assets/icons/arrow-right.svg"
+            alt="arrow-down"
+            class="w-[18px] h-[18px]"
+          />
+        </button>
+      </div>
+    </div>
+
+    <!-- Chart and Card Section -->
+    <div class="flex flex-col gap-5 mb-[26px] md:flex-row">
+      <div class="w-full md:w-4/12 h-[264px] rounded-[12.47px] bg-[#FFFFFF]">
+        <app-card></app-card>
+      </div>
+
+      <div
+        class="w-full md:w-8/12 h-[264px] bg-[#FFFFFF] border-[0.81px] border-[#EBEBEB] rounded-md"
+      >
+        <app-chart></app-chart>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Part -->
+  <div
+    class="flex flex-col w-full pl-[15px] pr-[15px] lg:pl-[33px] lg:pr-[137px]"
+  >
+    <!-- Top Bar with Buttons and Search -->
+
+    <div class="flex justify-between items-center parnetSearchBar">
+      <div
+        class="flex justify-start gap-2 items-center w-full h-[35px] booking"
+      >
+        <div>
+          <button
+            class="w-[100px] h-full bg-[#8A74F9] hover:bg-[#725ce0] rounded-[8px] p-[5px] text-center text-[#ffffff] font-neoSans text-[12px] sm:text-[14px] font-normal leading-[24px] whitespace-nowrap"
+          >
+            حجز تذكرة جديدة
+          </button>
+        </div>
+        <div class="flex gap-2">
+          <p
+            class="font-neoSans text-[12px] sm:text-[14px] font-normal leading-[16.74px] text-left"
+          >
+            مفعله
+          </p>
+          <div class="w-[16px] h-[16px]">
+            <label class="inline-flex items-center mb-5 cursor-pointer">
+              <input type="checkbox" value="" class="sr-only peer" checked />
+              <div
+                class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#8A74F9] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#8A74F9]"
+              ></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="w-full sm:w-[363px] h-[36px] flex justify-around gap-1 items-center"
+      >
+        <div
+          class="border-[0.75px] w-[32px] h-[32px] mb-1 border-[#92A1AD66] flex items-center justify-center bg-white rounded-[4px]"
+        >
+          <img
+            src="assets/icons/sort.svg"
+            alt="sort"
+            class="w-[16px] h-[16px]"
+          />
+        </div>
+
+        <div
+          class="border-[0.75px] w-[32px] h-[32px] mb-1 border-[#92A1AD66] flex items-center justify-center bg-white rounded-[4px]"
+        >
+          <img
+            src="assets/icons/filter.svg"
+            alt="filter"
+            class="w-[16px] h-[16px]"
+          />
+        </div>
+
+        <div class="w-full sm:w-[227px] h-[36px]">
+          <form class="">
+            <div class="relative">
+              <input
+                type="search"
+                id="default-search"
+                class="block w-full p-1 ps-4 rounded-[4px] pe-10 border-[1px] border-[#92A1AD66] border-gray-300 text-right placeholder:text-right placeholder:font-neoSans placeholder:text-[10px] sm:placeholder:text-[10px] sm:font-normal placeholder:leading-[11.96px] focus-within:border-0"
+                placeholder=".....بحث عن"
+                tooltipEvent="focus"
+                required
+              />
+
+              <div
+                class="absolute inset-y-0 right-0 pe-3 flex items-center pointer-events-none"
+              >
+                <img
+                  src="assets/icons/search-normal.svg"
+                  alt="search"
+                  class="w-[16px] h-[16px]"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="font-neoSans text-[12px] sm:text-[14px] font-normal leading-[16.74px] text-left whitespace-nowrap"
+        >
+          <p>مبيعات التذاكر</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="w-full pt-[16px]">
+      <app-table></app-table>
+    </div>
+  </div>
+</div>
